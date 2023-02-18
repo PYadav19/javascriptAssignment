@@ -1,4 +1,5 @@
 "use strict";
+
 let hasDriversLicense = false;
 const passTest = true;
 
@@ -93,3 +94,46 @@ function fruitProcessor1(apple, orange) {
 console.log(fruitProcessor1(5, 6));
 
 // REVIEWING FUNCTION
+
+const calcAge = function (birthYear) {
+  return 2023 - birthYear;
+};
+
+const yearUntilRetirement_1 = function (birthYear) {
+  const age_1 = calcAge(birthYear);
+  const retirement_1 = 60 - age_1;
+  if (retirement_1 > 0) {
+    return retirement_1;
+  } else {
+    return -1;
+  }
+};
+
+console.log(yearUntilRetirement_1(1997));
+console.log(yearUntilRetirement_1(1950));
+
+// FUNCTION CODING CHALLENGE
+
+const calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3;
+
+// Test case 1
+const avgDolphins = calcAverage(44, 23, 71);
+const avgKoalas = calcAverage(65, 54, 49);
+console.log(avgDolphins, avgKoalas);
+
+const checkWinner = (avgDolphins, avgKoalas) => {
+  if (avgDolphins >= 2 * avgKoalas) {
+    console.log(`dolphins win (${avgDolphins} VS ${avgKoalas})`);
+  } else if (avgKoalas >= 2 * avgDolphins) {
+    console.log(`dolphins win (${avgKoalas} VS ${avgDolphins})`);
+  } else {
+    console.log("No  team wins...");
+  }
+};
+
+checkWinner(avgDolphins, avgKoalas);
+
+// Test case 2
+const scoreDolphins = calcAverage(85, 54, 41);
+const scoreKoalas = calcAverage(23, 34, 27);
+checkWinner(scoreDolphins, scoreKoalas);
