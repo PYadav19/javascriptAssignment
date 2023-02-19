@@ -1,5 +1,5 @@
 "use strict";
-
+/*
 let hasDriversLicense = false;
 const passTest = true;
 
@@ -137,3 +137,193 @@ checkWinner(avgDolphins, avgKoalas);
 const scoreDolphins = calcAverage(85, 54, 41);
 const scoreKoalas = calcAverage(23, 34, 27);
 checkWinner(scoreDolphins, scoreKoalas);
+
+
+// DATA STRUCTURE -> ARRAYS
+const friends = ["Karry", "Kajal", "Dheeraj", "Kashish", "Ankita", "Tabassum"];
+console.log(friends);
+
+const years = new Array(1997, 1987, 2020, 2023, 1995);
+
+console.log(friends[0]);
+console.log(years[3]);
+
+console.log(friends.length);
+console.log(friends[friends.length - 1]);
+
+// we can add and remove the value from an array
+
+friends[3] = "Manish";
+friends[friends.length - 1] = "Vishali";
+console.log(friends);
+
+// we can store diffrent type of value in array , we can even
+// put expressions and another array as well
+
+const pooja = ["Pooja", "Yadav", 2022 - 1999, "teacher", friends];
+console.log(pooja);
+
+// Exercise
+// calculate the age
+
+const calc_age = function (birth_year) {
+  return 2023 - birth_year;
+};
+
+const year = [1980, 1972, 2002, 2010, 2020];
+const age1 = calc_age(year[0]);
+const age2 = calc_age(year[1]);
+const age3 = calc_age(year[2]);
+const age4 = calc_age(year[3]);
+console.log(age1, age2, age3, age4);
+
+const ages = [
+  calc_age(year[0]),
+  calc_age(year[1]),
+  calc_age(year[2]),
+  calc_age(year[3]),
+];
+console.log(ages);
+
+
+// BASIC ARRAY OPERATIONS (METHODS)
+
+const clzFriends = ["Rohan", "Vishali", "Kashish", "Rahul", "Shivam"];
+
+//Add elements
+
+clzFriends.push("Suhani"); // it adds the emlemet in the last
+
+//Push is a function which return length of the array
+const newLength = clzFriends.push("prahlad");
+console.log(clzFriends);
+console.log(newLength);
+
+clzFriends.unshift("Ravina"); // first
+console.log(clzFriends);
+
+//Remove elements
+//pop function return the popped elements
+const popped = clzFriends.pop(); //last
+console.log(clzFriends);
+console.log(popped);
+
+clzFriends.shift(); //first
+console.log(clzFriends);
+
+//indexof function return in which index value is stored
+console.log(clzFriends.indexOf("Suhani"));
+console.log(clzFriends.indexOf("BOb"));
+
+// inculdes return boolean value means if the value exist in array or not.
+console.log(clzFriends.includes("Rohan"));
+console.log(clzFriends.includes("Robert"));
+
+if (clzFriends.includes("Rahul")) {
+  console.log("Rahul is your college friend:D");
+}
+
+
+//Array coding challenge
+const calcTip = function (Bill) {
+  return Bill >= 50 && Bill <= 300 ? Bill * 0.15 : Bill * 0.2;
+};
+
+const bills = [125, 555, 44];
+
+let tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+console.log(bills, tips);
+
+//Bonus
+const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
+console.log(totals);
+
+// Introduction to objects
+
+const PoojaArray = [
+  "Pooja",
+  "Yadav",
+  2022 - 1999,
+  "Teacher",
+  ["kajal", "karry", "jyoti"],
+];
+
+// object
+const Nishu = {
+  firstName: "Nishu",
+  lastName: "Yadav",
+  Age: 2022 - 1999,
+  Job: "Teacher",
+  friends: ["kajal", "karry", "jyoti"],
+};
+
+// keys is also called property , object are most fundamental way , there are mutiple ways of creating object , above one is called
+//literal object
+//in object order of value does not matter when retriving the value as in array we can retrive value only by using index no.
+
+// how to get data from an Object  - dot and bracket notation
+
+console.log(Nishu.firstName); //dot notation
+console.log(Nishu["lastName"]); // bracket notation
+
+const nameKey = "Name";
+console.log(Nishu["first" + nameKey]);
+console.log(Nishu["last" + nameKey]);
+
+const interestedIn = prompt(
+  "what do you want to know about Nishu? Choose between fisrtName , LastName , age, job, and friends"
+);
+//console.log(Nishu.interestedIn); // undefined becaus there is no property as interestedIn.
+//console.log(Nishu[interestedIn]);
+
+if (Nishu[interestedIn]) {
+  console.log(Nishu[interestedIn]);
+} else {
+  console.log("Wrong request!");
+}
+
+// Add new properties using dot and bracket noation
+Nishu.location = "Sangrur";
+Nishu["twitter"] = "@poojayadav";
+console.log(Nishu);
+
+//challenge
+//"Jonas has 3 friends , and his best friend is called Michael"
+
+console.log(
+  `${Nishu.firstName} has ${Nishu.friends.length} and her best friend is called ${Nishu.friends[0]}`
+);
+
+*/
+
+// OBJECT METHODS
+
+const jonas = {
+  firstName: "Jonas",
+  lastName: "Schmedtmann",
+  birthYear: 1991,
+  job: "teacher",
+  friends: ["Michael", "Peter", "Steven"],
+  hasDriverLicense: true,
+
+  // calcAge: function (birthYear) {
+  //   return 2037 - birthYear;
+  // },
+
+  calcAge: function () {
+    this.age = 2037 - this.birthYear;
+    return this.age;
+  },
+};
+
+//console.log(jonas.calcAge(1991)); //dot
+//console.log(jonas["calcAge"](1991)); //bracket
+
+console.log(jonas.calcAge());
+
+console.log(jonas.age);
+console.log(jonas.age);
+console.log(jonas.age);
+
+// challenge
+// "jonas is a 46 - years old Teacher, and he has a  driver's license"
