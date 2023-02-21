@@ -294,7 +294,7 @@ console.log(
   `${Nishu.firstName} has ${Nishu.friends.length} and her best friend is called ${Nishu.friends[0]}`
 );
 
-*/
+
 
 // OBJECT METHODS
 
@@ -314,6 +314,12 @@ const jonas = {
     this.age = 2037 - this.birthYear;
     return this.age;
   },
+
+  getSummary: function () {
+    return `${this.firstName} is a ${this.calcAge()} - years old ${
+      this.job
+    }, and he has ${this.hasDriverLicense ? "a" : "no"}  driver's license `;
+  },
 };
 
 //console.log(jonas.calcAge(1991)); //dot
@@ -327,3 +333,91 @@ console.log(jonas.age);
 
 // challenge
 // "jonas is a 46 - years old Teacher, and he has a  driver's license"
+
+console.log(jonas.getSummary());
+
+// Coding challenge
+
+const markMiller = {
+  firstName: "Mark",
+  lastName: "Miller",
+  mass: 78,
+  height: 1.69,
+  calcBMI: function () {
+    this.BMI = this.mass / this.height ** 2;
+    return this.BMI;
+  },
+};
+
+const johnSmith = {
+  firstName: "John",
+  lastName: "Smith",
+  mass: 92,
+  height: 1.95,
+  calcBMI: function () {
+    this.BMI = this.mass / this.height ** 2;
+    return this.BMI;
+  },
+};
+
+markMiller.calcBMI();
+johnSmith.calcBMI();
+console.log(johnSmith.BMI);
+console.log(markMiller.BMI);
+
+if (markMiller.BMI > johnSmith.BMI) {
+  console.log(
+    `${markMiller.firstName} ${markMiller.lastName}'s BMI (${markMiller.BMI}) is higher than ${johnSmith.firstName}  ${johnSmith.lastName}'s BMI (${johnSmith.BMI})`
+  );
+} else {
+  console.log(
+    `${johnSmith.firstName} ${johnSmith.lastName}'s BMI (${johnSmith.BMI}) is higher than ${markMiller.firstName}  ${markMiller.lastName}'s BMI (${markMiller.BMI})`
+  );
+}
+
+//iteration : for loop
+
+// for loop keeps running wjile condition is true
+
+for (let rep = 1; rep <= 10; rep++) {
+  console.log(`Lifting weights repetition ${rep}`);
+}
+
+*/
+// arrays , breaking and continuing
+
+const jonas = [
+  "jonas",
+  "Schmedtmann",
+  2037 - 1991,
+  "teacher",
+  ["Michael", "Peter", "Steven"],
+  true,
+];
+
+// for (let i = 0; i < 5; i++) {
+//   console.log(jonas[i]);
+// }
+
+const types = [];
+
+// for (let i = 0; i < jonas.length; i++) {
+//   // Reading from jonas array
+
+//   //console.log(jonas[i]);
+//   console.log(jonas[i], typeof jonas[i]);
+
+//   //Filling types array
+//   //types[i] = typeof jonas[i];
+//   types.push(typeof jonas[i]);
+// }
+
+// console.log(types);
+
+const years = [1991, 2007, 1997, 2022];
+const age = [];
+
+for (let i = 0; i < years.length; i++) {
+  let age = 2023 - years[i];
+  age[i] = years[i];
+}
