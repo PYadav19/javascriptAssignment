@@ -383,7 +383,7 @@ for (let rep = 1; rep <= 10; rep++) {
   console.log(`Lifting weights repetition ${rep}`);
 }
 
-*/
+
 // arrays , breaking and continuing
 
 const jonas = [
@@ -447,3 +447,6 @@ const measureKelvin = function () {
 
 // Identify
 console.log(measureKelvin());
+*/
+
+console.log("my name is Pooja Yadav");
