@@ -107,6 +107,8 @@ console.log(markHigherBMI);
 
 // String And Template Literals
 
+/*
+
 const firstName = "Pooja";
 const job = "software Engineer";
 const birthYear = 1997;
@@ -266,3 +268,5 @@ console.log(
     stevenBill + tip
   }`
 );
+
+*/
