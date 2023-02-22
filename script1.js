@@ -421,3 +421,29 @@ for (let i = 0; i < years.length; i++) {
   let age = 2023 - years[i];
   age[i] = years[i];
 }
+
+//Debugging with the console and Breakpoint
+const measureKelvin = function () {
+  const measurement = {
+    type: "temp",
+    unit: "celsius",
+
+    // fix
+    value: Number(prompt("Degrees Clesius:")),
+  };
+  // Find
+
+  console.log(measurement);
+
+  console.table(measurement);
+
+  //   console.log(measurement.value);
+  //   console.warn(measurement.value);
+  //   console.error(measurement.value);
+
+  const kelvin = measurement.value + 273;
+  return kelvin;
+};
+
+// Identify
+console.log(measureKelvin());
