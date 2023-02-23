@@ -15,3 +15,7 @@ h1 {
 #first-name {
   border: 5px solid #444;
 }
+
+.second {
+  color: blue;
+}
