@@ -7,4 +7,11 @@ body {
 h1 {
   font-size: 40px;
 }
-git.a
+
+.first {
+  color: red;
+}
+
+#first-name {
+  border: 5px solid #444;
+}
