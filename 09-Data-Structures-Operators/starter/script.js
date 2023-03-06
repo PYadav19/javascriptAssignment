@@ -40,9 +40,13 @@ const restaurant = {
       `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
     );
   },
+
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(`your pasta is ready with ${ing1}  ${ing2}, and ${ing3}`);
+  },
 };
 
-// spread operator(...)
+// spread operator(...)-----------------------------------------------------------------------------------------
 
 const arr = [1, 2, 3];
 
@@ -76,6 +80,35 @@ console.log(mainMenuCopy);
 
 const menu = [...restaurant.mainMenu, ...newMainMenu];
 console.log(menu);
+
+// spread operator works on all iterables- strings , arrays , maps ,sets but not objects
+
+const str = 'Pooja';
+console.log(...str);
+
+const strArr = [...str];
+console.log(strArr);
+
+// make new function to order pasta with 3 ingredients , and than collect the ingredients value from user
+//using the promopt method and store values in an array . than call the order pasta function with those arguments.
+const ingredients = [
+  prompt('Lets make pasta ! Ingredient 1? '),
+  prompt(' Ingredient 2? '),
+  prompt(' Ingredient 3? '),
+];
+console.log(ingredients);
+
+restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]); // manually
+restaurant.orderPasta(...ingredients); // using spread operator
+
+// objects
+const newRestaurant = { ...restaurant, founder: 'Guiseppe', foundedIn: 1997 };
+console.log(newRestaurant);
+
+const restaurantCopy = { ...restaurant };
+restaurantCopy.name = 'Ristorante Roma';
+console.log(restaurant.name);
+console.log(restaurantCopy.name);
 
 /*
 restaurant.orderDelivery({
