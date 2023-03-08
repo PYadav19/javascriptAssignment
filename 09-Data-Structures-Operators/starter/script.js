@@ -224,3 +224,56 @@ add(8, 2, 5, 3, 2, 1, 4);
 
 const x = [23, 5, 7];
 add(...x);
+
+// SHORT CIRCUITING (|| , &&)
+/*
+if the first value is truthy value than it will return the 1st value
+it will not evaluate the other values , only incase the 1st value is fasly 
+in that case only it will go to other value.
+*/
+
+console.log('------------ NOT ----------------');
+
+console.log(3 || 'Pooja');
+console.log('' || 'Pooja');
+console.log(true || 0);
+console.log(undefined || null);
+
+console.log(undefined || '' || 'Hello' || 23 || null);
+
+//example
+restaurant.numGuests = 23;
+const guest1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guest1);
+
+//using short circuiting
+const guest2 = restaurant.numGuests || 10;
+console.log(guest2);
+
+// if we set the value to 0 then it will not print 0 because it's a falsy value
+console.log('----------- AND ---------------');
+
+console.log(7 && 'Pooja');
+console.log(0 && 'pooja');
+
+console.log('hello' && 23 && null && 'Pooja');
+
+//Example
+if (restaurant.orderPasta) {
+  restaurant.orderPasta('mushroom', 'spinacch', 'Cheese');
+}
+
+// using short circuiting
+restaurant.orderPasta &&
+  restaurant.orderPasta('mushroom', 'spinacch', 'Cheese');
+
+// Nullish coalscing
+
+restaurant.numGuests = 0;
+const guest = restaurant.numGuests || 10;
+console.log(guest);
+
+//Nullish = null and undefined (NOT 0 OR '')
+const guestCorrect = restaurant.numGuests ?? 10;
+console.log(guestCorrect);
+console.log('Pooja Yadav');
