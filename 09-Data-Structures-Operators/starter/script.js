@@ -5,6 +5,9 @@
 // '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
 // Data needed for first part of the section
+/*
+
+
 const restaurant = {
   name: 'Classico Italiano',
   location: 'Via Angelo Tavanti 23, Firenze, Italy',
@@ -110,7 +113,7 @@ restaurantCopy.name = 'Ristorante Roma';
 console.log(restaurant.name);
 console.log(restaurantCopy.name);
 
-/*
+
 restaurant.orderDelivery({
   time: '22:30',
   address: 'Via del Sole , 21',
@@ -154,7 +157,7 @@ const {
   fri: { open: O, close: C },
 } = openingHours;
 console.log(O, C);
-*/
+
 // Array destructuring -----------------------------------------------------------------------
 
 //  without destructuring normal way
@@ -226,11 +229,11 @@ const x = [23, 5, 7];
 add(...x);
 
 // SHORT CIRCUITING (|| , &&)
-/*
+
 if the first value is truthy value than it will return the 1st value
 it will not evaluate the other values , only incase the 1st value is fasly 
 in that case only it will go to other value.
-*/
+
 
 console.log('------------ NOT ----------------');
 
@@ -316,3 +319,87 @@ rest2.owner &&= '<ANONYMOUS>';
 
 console.log(rest1);
 console.log(rest2);
+
+*/
+
+//Enhanced object literals
+// 1. Example
+
+// create another oject
+
+const openingHours = {
+  thu: {
+    open: 12,
+    close: 22,
+  },
+  fri: {
+    open: 11,
+    close: 23,
+  },
+  sat: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+
+const restaurant = {
+  name: 'Classico Italiano',
+  location: 'Via Angelo Tavanti 23, Firenze, Italy',
+  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+
+  order: function (starterIndex, mainIndex) {
+    return this.starterMenu[starterIndex], this.mainMenu[mainIndex];
+  },
+  //  ES6 enhanced object literal way
+  openingHours,
+  // ES6 2. enchancment is that we can write the methods without using function keyword as below
+  orderDelivery({ starterIndex = 1, mainIndex = 0, address, time = '20:00' }) {
+    console.log(
+      `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+    );
+  },
+
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(`your pasta is ready with ${ing1}  ${ing2}, and ${ing3}`);
+  },
+};
+
+console.log(restaurant);
+
+// newer feature of arrays and objects :- optional  chaining
+// suppose we want to check what are the opening hours on mon in restaurant
+
+// mon does not exist that why we got these output
+console.log(restaurant.openingHours.mon); // undefined
+// console.log(restaurant.openingHours.mon.open); // here it will give error "canread properties of undefined not "
+
+console.log(restaurant.openingHours.fri.open); // friday exists  output :11
+
+// to avoid the error we have to check for the condition
+if (restaurant.openingHours.mon) console.log(restaurant.openingHours.mon);
+
+if (restaurant.openingHours && restaurant.openingHours.mon)
+  console.log(restaurant.openingHours.mon.open);
+
+//with operational chaining
+console.log(restaurant.openingHours.mon?.open);
+console.log(restaurant.openingHours?.mon?.open);
+
+// Example:
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+// we want to loop through this array and check if the restaurant is open for each day.
+for (const day of days) {
+  const open = restaurant.openingHours[day]?.open ?? 'closed';
+  console.log(`On ${day}, we open at ${open}`);
+}
+
+//Methods
+console.log(restaurant.order?.(0, 2) ?? 'Method does not exist');
+console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method does not exist');
+
+//Arrays
+const user = [{ name: 'jonas', email: 'hellojonas.io' }];
+
+console.log(user[0]?.name ?? 'User array empty');
