@@ -403,3 +403,38 @@ console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method does not exist');
 const user = [{ name: 'jonas', email: 'hellojonas.io' }];
 
 console.log(user[0]?.name ?? 'User array empty');
+
+// MAP fundamentals
+
+const rest = new Map();
+rest.set('name', 'Classico Italiano');
+rest.set(1, 'Firenze , Italy');
+console.log(rest.set(2, 'Lisbon Portugal'));
+
+restaurant
+  .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'We are open :D')
+  .set(false, 'we are closed :(');
+
+console.log(resr.get('name'));
+console.log(resr.get(true));
+console.log(rest.get(1));
+
+const time = 21;
+console.log(
+  time > rest.get(time > rest.get('open') && time < rest.get('close'))
+);
+
+console.log(rest.has('categories'));
+rest.delete(2);
+//rest.clear();
+console.log(rest);
+console.log(rest.size);
+
+// using array and object as map key
+const arr = [1, 2];
+rest.set(arr, 'Test');
+
+rest.set(document.querySelector('h1'), 'Heading');
