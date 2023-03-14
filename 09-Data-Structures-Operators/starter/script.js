@@ -411,15 +411,15 @@ rest.set('name', 'Classico Italiano');
 rest.set(1, 'Firenze , Italy');
 console.log(rest.set(2, 'Lisbon Portugal'));
 
-restaurant
+rest
   .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
   .set('open', 11)
   .set('close', 23)
   .set(true, 'We are open :D')
   .set(false, 'we are closed :(');
 
-console.log(resr.get('name'));
-console.log(resr.get(true));
+console.log(rest.get('name'));
+console.log(rest.get(true));
 console.log(rest.get(1));
 
 const time = 21;
@@ -438,3 +438,44 @@ const arr = [1, 2];
 rest.set(arr, 'Test');
 
 rest.set(document.querySelector('h1'), 'Heading');
+
+// MAP ITERATIONS
+// there is another method of generating map without using set method syntax below
+// Syntax :- type variable-name = new Map([[key , value],[key , value],[],[]])
+const question = new Map([
+  ['question', 'What is the best rogramming language in the world'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'Javascript'],
+  [4, 'C++'],
+  ['correct', 3],
+  [(true, 'Correct')],
+  [false, 'Try again!'],
+]);
+
+console.log(question);
+
+// we can also convert an object into map
+console.log(Object.entries(openingHours));
+const hoursMap = new Map(Object.entries(openingHours));
+console.log(hoursMap);
+
+// Quiz App
+// we can  do interation as well on maps
+
+console.log(question.get('question'));
+for (const [key, value] of question) {
+  if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+}
+
+const answer = Number(prompt('Your answer'));
+console.log(answer);
+const result = question.get('correct') === answer;
+//console.log(result);
+// console.log(question.get(question.get(result)));
+
+// Convert map to array
+console.log([...question]);
+// console.log([...question.entries()]);
+console.log([...question.keys()]);
+console.log([...question.values()]);
