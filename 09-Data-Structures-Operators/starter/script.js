@@ -497,8 +497,120 @@ console.log('8737'.length);
 
 console.log(airline.indexOf('r'));
 console.log(airline.indexOf('s'));
-console.log(airline.indexOf('a'));
+console.log(airline.lastIndexOf('a'));
 console.log(airline.indexOf('jet'));
 
 console.log(airline.slice(4));
 console.log(airline.slice(4, 7));
+
+console.log(airline.slice(0, airline.indexOf(' ')));
+console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+
+// we can also use negative arguement than it will start extracting elements from end.
+console.log(airline.slice(-2));
+console.log(airline.slice(1, -3));
+
+// write a function which receive the seat number and logs to console whether it is middle seat or not.
+
+const middleSeat = function (seat) {
+  // B and E are middle seats
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') {
+    console.log('You got the Middle seat ');
+  } else {
+    console.log('You got lucky :)');
+  }
+};
+
+middleSeat('11B');
+middleSeat('23C');
+middleSeat('24E');
+
+/*Strings are primitive but still we are able to call method on it because javascript.- 
+whenever we call a method on a string javascript will automatically behind the scenes convert the 
+string primitive to a string object with a same content and than its on that object on which method is called
+and this process is called boxing because it basically takes our string and put it into a box which is the object
+
+console.log(new String('Pooja'));
+console.log(typeof new String('Pooja'));
+console.log(typeof new String('Pooja').slice(1));
+
+*/
+// String Methods
+
+// changing the case of a string
+
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+console.log('Pooja Yadav'.toLowerCase());
+console.log('Pooja Yadav'.toUpperCase());
+
+//FIX THE CAPITALIZATION IN NAME
+
+const passenger = 'jOnAS';
+const passengerLower = passenger.toLowerCase();
+const passengerCorrect =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect);
+
+// create a function which takes any passenger name and converts it itno correct one
+
+const correctPassengerName = function (passengerName) {
+  const name = passengerName.toLowerCase();
+  const correctName = name[0].toUpperCase() + name.slice(1);
+  console.log(correctName);
+};
+
+correctPassengerName('pOoJA');
+correctPassengerName('kashiSH');
+correctPassengerName('visHAlI');
+correctPassengerName('kaJaL');
+
+// comparing user input emails
+
+const email = 'poojayd19@gmail.com';
+const loginEmail = '   PoojaYD19@GMAil.com  \n';
+
+const lowerEmail = loginEmail.toLowerCase();
+const trimmedEmail = lowerEmail.trim(); // to get rid of all white spaces
+console.log(trimmedEmail);
+
+const normalizedEmail = loginEmail.toLowerCase().trim(); // another way of doing above task
+console.log(normalizedEmail);
+
+// Replacing
+
+const priceGB = '288,97*';
+const priceUS = priceGB.replace('*', '$').replace(',', '.');
+console.log(priceUS);
+
+const announcement =
+  'All passenger come to the boarding door 23. Boarding door 23!';
+console.log(announcement.replace('door', 'gate'));
+console.log(announcement.replaceAll('door', 'gate'));
+
+//Boolean
+
+const Plane = ' Airbus A320neo';
+console.log(Plane.includes('A320'));
+console.log(Plane.includes('Boeing'));
+console.log(Plane.startsWith('Airb'));
+
+if (Plane.startsWith('Airbus') && Plane.endsWith('neo'))
+  console.log('Part of the New airbus family');
+
+// Practice exercise
+
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
+
+  if (baggage.includes('knife') || baggage.includes('gun')) {
+    console.log('You are not allowed on board');
+  } else {
+    console.log('Welcome aboard!');
+  }
+};
+
+checkBaggage('I have a laptop , Knife ');
+checkBaggage('Socks and camera');
+checkBaggage('Got some snacks and a gun for protection');
