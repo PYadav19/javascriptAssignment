@@ -614,3 +614,7 @@ const checkBaggage = function (items) {
 checkBaggage('I have a laptop , Knife ');
 checkBaggage('Socks and camera');
 checkBaggage('Got some snacks and a gun for protection');
+
+checkBaggage('clothes and food');
+
+// strings part 3
