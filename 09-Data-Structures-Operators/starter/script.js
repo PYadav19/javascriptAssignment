@@ -322,6 +322,7 @@ console.log(rest2);
 
 */
 
+/*
 //Enhanced object literals
 // 1. Example
 
@@ -475,7 +476,29 @@ const result = question.get('correct') === answer;
 // console.log(question.get(question.get(result)));
 
 // Convert map to array
+
 console.log([...question]);
 // console.log([...question.entries()]);
 console.log([...question.keys()]);
 console.log([...question.values()]);
+*/
+//Strings
+const airline = 'Vistara jet';
+const plane = 'A340';
+
+console.log(plane[0]);
+console.log(plane[1]);
+console.log(plane[2]);
+console.log(plane[3]);
+console.log('8737'[0]);
+
+console.log(airline.length);
+console.log('8737'.length);
+
+console.log(airline.indexOf('r'));
+console.log(airline.indexOf('s'));
+console.log(airline.indexOf('a'));
+console.log(airline.indexOf('jet'));
+
+console.log(airline.slice(4));
+console.log(airline.slice(4, 7));
