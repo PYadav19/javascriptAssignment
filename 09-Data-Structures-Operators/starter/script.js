@@ -618,3 +618,20 @@ checkBaggage('Got some snacks and a gun for protection');
 checkBaggage('clothes and food');
 
 // strings part 3
+// split and jin menthod
+
+console.log('a+very+nice+string'.split('+')); // output ['a','very','nice','string']
+console.log('Pooja Yadav'.split(' ')); // it will store the result in array
+const [firstName, lastName] = 'Pooja Yadav'.split(' ');
+
+const newName = ['Ms.', firstName, lastName.toUpperCase()].join(' ');
+console.log(newName);
+
+const capitalizeName = function (name) {
+  const names = name.split(' ');
+
+  for (const n of names) {
+    n[0].toUpperCase + n.slice(1);
+  }
+};
+const Passenger = 'jessica ann smith davis';
