@@ -635,3 +635,8 @@ const capitalizeName = function (name) {
   }
 };
 const Passenger = 'jessica ann smith davis';
+
+// padding
+
+const message = 'Go to gate 23!';
+console.log(message.padStart(20, '+'), PadEnd(30, '+'));
