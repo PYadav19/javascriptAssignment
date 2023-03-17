@@ -640,3 +640,15 @@ const Passenger = 'jessica ann smith davis';
 
 const message = 'Go to gate 23!';
 console.log(message.padStart(20, '+'), PadEnd(30, '+'));
+
+const maskCreditCard = function (number) {
+  const str = number + ' ';
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+};
+
+console.log(maskCreditCard(4357406757585756));
+
+//Repeat
+const message2 = 'Bad weather... All departures are delayed....';
+console.log(message2.repeat(4));
