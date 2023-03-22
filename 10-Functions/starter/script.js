@@ -196,3 +196,21 @@ const addTaxRate = function (rate) {
 const addVAT2 = addTaxRate(0.23);
 console.log(addVAT(200));
 console.log(addVAT(45));
+
+// Challenge
+const pool = {
+  question: 'What is your favourite programming language?',
+  options: ['0: JavaScript', '1:Python', '2: Rust', '3: C++'],
+
+  // This generates [0,0,0,0] .
+  answer: new Array(4).fill(0),
+};
+
+// IIFE -> Immediately invoked function expression
+// means calling the function only once and not again
+
+(function () {
+  console.log('this will never run again ');
+})();
+
+(() => console.log('This will Also never run Again '))();
