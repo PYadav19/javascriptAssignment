@@ -1,7 +1,7 @@
 'use strict';
 
 const bookings = [];
-const createBooking = function (flightNum, numPassenger, price) {
+const createBooking = function (flightNum, numPassengers, price) {
   const booking = {
     flightNum,
     numPassengers,
@@ -71,7 +71,8 @@ transformer('Javascript is the best!', oneWord);
 
 const high5 = function () {
   console.log('');
-}[('jonas', 'Martha', 'Adam')].forEach(high5);
+};
+//[('jonas', 'Martha', 'Adam')].forEach(high5);
 
 //functions returning functions
 const greet = function (greeting) {
@@ -90,3 +91,51 @@ greet('Hey')('Manish');
 //Challenge
 const greetArr = greeting => name => console.log(`${greeting} ${name} `);
 greetArr('Hi')('Manish');
+
+//the call and apply methods
+const lufthansa = {
+  airline: 'lufthansa',
+  iataCode: 'LH',
+  bookings: [],
+  //book :function(){}
+  book(flightNum, name) {
+    console.log(`${name} booked a seat on ${this.airline} flight ${flightNum}`);
+
+    this.bookings.push({ flight: `${this.iataCode}  ${flightNum}`, name });
+  },
+};
+
+lufthansa.book(239, 'Jonas Schmedtmann');
+lufthansa.book(635, 'Jhon Smith');
+console.log(lufthansa);
+
+const eurowing = {
+  airline: 'Eurowings',
+  iataCode: 'EW',
+  bookings: [],
+};
+
+const book = lufthansa.book;
+
+//book(23, 'Sarah Williams');
+// we will get error because this keyword points to undefined when called from regular function
+// how we will tell this keyword that we want to book  eurowings flight or lufthansa flight
+// there are 3 methods call, appy and bind
+
+//Call Method
+book.call(eurowing, 23, 'Sarah Williams');
+console.log(eurowing);
+
+book.call(lufthansa, 25, 'Jonas Schmedtmann');
+console.log(lufthansa);
+
+const swiss = {
+  airline: 'Swiss Airline',
+  iataCode: 'LX',
+  bookings: [],
+};
+
+book.call(swiss, 453, 'George Cooper');
+console.log(swiss);
+
+// Apply Method
