@@ -139,3 +139,60 @@ book.call(swiss, 453, 'George Cooper');
 console.log(swiss);
 
 // Apply Method
+// the only difference in apply method is that it takes an array as an argument
+
+const flightData = [583, 'Marry Cooper'];
+book.apply(swiss, flightData);
+console.log(swiss);
+
+// Bind method - same as call and apply bind method as allows us to manually set the this keyword for any function call
+//the diffrence is that the bind does not immediaely call the function instaed it returns a new function where the this keyword is bound
+//so its set to whatever value we pass to bind
+
+//book.call(eurowing, 23, 'Sarah Williams');
+
+const bookEW = book.bind(eurowing);
+const bookLH = book.bind(lufthansa);
+const bookLX = book.bind(swiss);
+bookEW(234, 'Steven Williams');
+
+const bookEW23 = book.bind(eurowing, 23); // we can even preset the values
+bookEW23('Pooja Yadav');
+bookEW23('Jonas schmedtmann');
+
+// With Event Listeners
+
+lufthansa.planes = 300;
+lufthansa.buyPlane = function () {
+  console.log(this);
+  this.planes++;
+  console.log(this.planes);
+};
+
+// lufthansa.buyPlane();
+
+document
+  .querySelector('.buy')
+  .addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
+
+// Partial application
+const addTax = (rate, value) => value + value * rate;
+console.log(addTax(0.1, 200));
+
+const addVAT = addTax.bind(null, 0.23);
+// addVAT = value => value+value*0.23
+
+console.log(addVAT(200));
+console.log(addVAT(45));
+
+// Challenge
+
+const addTaxRate = function (rate) {
+  return function (value) {
+    return value + value * rate;
+  };
+};
+
+const addVAT2 = addTaxRate(0.23);
+console.log(addVAT(200));
+console.log(addVAT(45));
