@@ -214,3 +214,8 @@ const pool = {
 })();
 
 (() => console.log('This will Also never run Again '))();
+
+console.log('My name is pooja');
+console.log('My name is pooja');
+console.log('My name is pooja');
+console.log('My name is pooja');
