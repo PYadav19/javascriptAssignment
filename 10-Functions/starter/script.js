@@ -215,7 +215,43 @@ const pool = {
 
 (() => console.log('This will Also never run Again '))();
 
-console.log('My name is pooja');
-console.log('My name is pooja');
-console.log('My name is pooja');
-console.log('My name is pooja');
+// closure
+
+let f;
+
+const g = function () {
+  const a = 23;
+  f = function () {
+    console.log(a * 2);
+  };
+};
+
+const h = function () {
+  const b = 777;
+  f = function () {
+    console.log(b * 2);
+  };
+};
+
+g();
+f();
+console.dir(f);
+// re assigning f function
+h();
+f();
+console.dir(f);
+
+//Example 2
+
+const boardPassengers = function (n, wait) {
+  const perGroup = n / 3;
+
+  setTimeout(function () {
+    console.log(`we are  now boarding all ${n} passengers `);
+    console.log(`There are 3 groups, each with ${perGroup} passengers`);
+  }, wait * 1000);
+
+  console.log(`will start boarding in ${wait} seconds`);
+};
+
+boardPassengers(180, 3);
