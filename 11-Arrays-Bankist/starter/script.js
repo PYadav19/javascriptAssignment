@@ -109,3 +109,18 @@ console.log([...arr, ...arr2]);
 
 //join
 console.log(letters.join('-'));
+
+// The new AT METHOD
+
+const num = [23, 64, 57];
+console.log(num[0]); // if want to get any num from array
+console.log(num.at(0)); // another way of doing it
+
+//getting last array element
+console.log(num[num.length - 1]);
+console.log(num.slice(-1));
+console.log(num.at(-1));
+
+// AT METHOD also works on strings
+console.log('jonas'.at(0));
+console.log('jonas'.at(-1));
