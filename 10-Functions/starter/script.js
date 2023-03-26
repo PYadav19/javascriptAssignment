@@ -1,5 +1,5 @@
 'use strict';
-
+/*
 const bookings = [];
 const createBooking = function (flightNum, numPassengers, price) {
   const booking = {
@@ -255,3 +255,15 @@ const boardPassengers = function (n, wait) {
 };
 
 boardPassengers(180, 3);
+
+*/
+
+// challenge
+
+(function () {
+  const header = document.querySelector('h1');
+  header.style.color = 'red';
+  document.querySelector('body').addEventListener('click', function () {
+    header.style.color = 'blue';
+  });
+})();
