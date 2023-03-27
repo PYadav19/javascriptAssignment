@@ -3,7 +3,7 @@
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // BANKIST APP
-
+/*
 // Data
 const account1 = {
   owner: 'Jonas Schmedtmann',
@@ -124,3 +124,44 @@ console.log(num.at(-1));
 // AT METHOD also works on strings
 console.log('jonas'.at(0));
 console.log('jonas'.at(-1));
+
+*/
+// USING FOR EACH METHOD for looping on array
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+// for (const movement of movements) {
+//   if (movement > 0) {
+//     console.log(`You have deposited ${movement}`);
+//   } else {
+//     console.log(`You withdraw ${Math.abs(movement)}`);
+//   }
+// }
+
+// console.log('-----FOREACH------');
+
+// movements.forEach(function (movement) {
+//   if (movement > 0) {
+//     console.log(`You have deposited ${movement}`);
+//   } else {
+//     console.log(`You withdraw ${Math.abs(movement)}`);
+//   }
+// });
+
+for (const [i, movement] of movements.entries()) {
+  if (movement > 0) {
+    console.log(`Movement ${i + 1}: You have deposited ${movement}`);
+  } else {
+    console.log(`Movement ${i + 1}: You withdraw ${Math.abs(movement)}`);
+  }
+}
+
+console.log('-----FOREACH------');
+
+movements.forEach(function (mov, i, arr) {
+  if (mov > 0) {
+    console.log(`Movement ${i + 1}:You have deposited ${mov}`);
+  } else {
+    console.log(`Movement ${i + 1}:You withdraw ${Math.abs(mov)}`);
+  }
+});
