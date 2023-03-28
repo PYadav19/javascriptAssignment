@@ -84,6 +84,28 @@ console.log(createUserNames('Steven Thomas Williams'));
 
 // console.log(Name);
 
+// using FILTER METHOD
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const deposites = movements.filter(function (mov) {
+  return mov > 0;
+});
+
+console.log(deposites);
+
+const depositeFor = [];
+for (const mov of movements) {
+  if (mov > 0) {
+    depositeFor.push(mov);
+  }
+}
+
+console.log(depositeFor);
+
+const withdrawals = movements.filter(function (mov) {
+  return mov < 0;
+});
+
+console.log(withdrawals);
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -213,16 +235,16 @@ currenciesUnique.forEach(function (value, _, map) {
 
 */
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
-// converting euro to US dollars
-const euroToUSD = 1.1;
-// const USD = movements.map(function (move) {
-//   return move * euroToUSD;
-// });
+// // converting euro to US dollars
+// const euroToUSD = 1.1;
+// // const USD = movements.map(function (move) {
+// //   return move * euroToUSD;
+// // });
 
+// // console.log(USD);
+// // console.log(movements);
+
+// const USD = movements.map(move => move * euroToUSD);
 // console.log(USD);
-// console.log(movements);
-
-const USD = movements.map(move => move * euroToUSD);
-console.log(USD);
