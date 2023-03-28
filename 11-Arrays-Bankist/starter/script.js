@@ -3,7 +3,7 @@
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // BANKIST APP
-/*
+
 // Data
 const account1 = {
   owner: 'Jonas Schmedtmann',
@@ -61,10 +61,33 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
+const createUserNames = function (user) {
+  const userName = user
+    .toLowerCase()
+    .split(' ')
+    .map(word => word[0])
+    .join('');
+  return userName;
+};
+
+console.log(createUserNames('Steven Thomas Williams'));
+
+// let userName = 'Steven Thomas Williams';
+// const Name = userName
+//   .toLowerCase()
+//   .split(' ')
+//   .map(function (word) {
+//     return word[0];
+//   })
+//   .join('');
+// console.log(Name);
+
+// console.log(Name);
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
-
+/*
 const currencies = new Map([
   ['USD', 'United States dollar'],
   ['EUR', 'Euro'],
@@ -125,7 +148,7 @@ console.log(num.at(-1));
 console.log('jonas'.at(0));
 console.log('jonas'.at(-1));
 
-*/
+
 // USING FOR EACH METHOD for looping on array
 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
@@ -165,3 +188,41 @@ movements.forEach(function (mov, i, arr) {
     console.log(`Movement ${i + 1}:You withdraw ${Math.abs(mov)}`);
   }
 });
+
+// For each method with MAPS AND SETS
+
+//MAP
+const currencies = new Map([
+  ['USD', 'United States dollar'],
+  ['EUR', 'Euro'],
+  ['GBP', 'Pound sterling'],
+]);
+
+currencies.forEach(function (value, key, map) {
+  console.log(`${key} : ${value}`);
+});
+
+//SET
+
+const currenciesUnique = new Set(['USB', 'GBP', 'USD', 'EUR', 'EUR']);
+console.log(currenciesUnique);
+
+currenciesUnique.forEach(function (value, _, map) {
+  console.log(`${value} : ${value}`);
+});
+
+*/
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+// converting euro to US dollars
+const euroToUSD = 1.1;
+// const USD = movements.map(function (move) {
+//   return move * euroToUSD;
+// });
+
+// console.log(USD);
+// console.log(movements);
+
+const USD = movements.map(move => move * euroToUSD);
+console.log(USD);
