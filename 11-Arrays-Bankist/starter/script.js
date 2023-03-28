@@ -106,6 +106,33 @@ const withdrawals = movements.filter(function (mov) {
 });
 
 console.log(withdrawals);
+
+// REDUCE METHOD
+const balance = movements.reduce(function (acc, cur, i, arr) {
+  return acc + cur;
+}, 0);
+
+console.log(balance);
+
+let balance2 = 0;
+for (const mov of movements) {
+  balance2 += mov;
+}
+
+console.log(balance2);
+
+// max value calculation
+
+const max = movements.reduce(function (acc, cur) {
+  if (acc > cur) {
+    return acc;
+  } else {
+    return cur;
+  }
+}, movements[0]);
+
+console.log(max);
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
