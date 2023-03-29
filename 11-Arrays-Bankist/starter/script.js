@@ -61,6 +61,29 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
+const calcDisplaySummary = function (movements) {
+  const incomes = movements
+    .filter(mov => mov > 0)
+    .reduce((acc, mov) => acc + mov, 0);
+  labelSumIn.textContent = `${incomes}EUR`;
+
+  const out = movements
+    .filter(mov => mov < 0)
+    .reduce((acc, mov) => acc + mov, 0);
+  labelSumOut.textContent = `${Math.abs(out)}`;
+
+  const interest = movements
+    .filter(mov => mov > 0)
+    .map(deposite => (deposite * 1.2) / 100)
+    .filter((int, i, arr) => {
+      console.log(arr);
+      return int >= 1;
+    })
+    .reduce((acc, int) => acc + int, 0);
+  labelSumInterest.textContent = `${interest}EUR`;
+};
+
+calcDisplaySummary(account1.movements);
 const createUserNames = function (user) {
   const userName = user
     .toLowerCase()
@@ -132,6 +155,32 @@ const max = movements.reduce(function (acc, cur) {
 }, movements[0]);
 
 console.log(max);
+
+//coding challenge
+
+const calAverageHumanAge = function (ages) {
+  const humanAges = ages.map(age => (age <= 2 ? 2 * age : 16 + age * 4));
+  const adults = humanAges.filter(age => age >= 18);
+  console.log(humanAges);
+  console.log(adults);
+
+  const average = adults.reduce((acc, age) => acc + age, 0) / adults.length;
+  console.log(average);
+  return average;
+};
+calAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
+
+// The magic of chaining method
+// we want to calculate the total deposits in USD .
+const euroToUSD = 1.1;
+
+//PIPELINE
+const totalDepositsUSD = movements
+  .filter(mov => mov > 0)
+  .map(mov => mov * euroToUSD)
+  .reduce((acc, mov) => acc + mov, 0);
+
+console.log(totalDepositsUSD);
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
