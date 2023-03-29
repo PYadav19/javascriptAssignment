@@ -5,6 +5,7 @@
 // BANKIST APP
 
 // Data
+/*
 const account1 = {
   owner: 'Jonas Schmedtmann',
   movements: [200, 450, -400, 3000, -650, -130, 70, 1300],
@@ -94,6 +95,7 @@ const createUserNames = function (user) {
 };
 
 console.log(createUserNames('Steven Thomas Williams'));
+*/
 
 // let userName = 'Steven Thomas Williams';
 // const Name = userName
@@ -108,79 +110,89 @@ console.log(createUserNames('Steven Thomas Williams'));
 // console.log(Name);
 
 // using FILTER METHOD
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
-const deposites = movements.filter(function (mov) {
-  return mov > 0;
-});
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// const deposites = movements.filter(function (mov) {
+//   return mov > 0;
+// });
 
-console.log(deposites);
+// console.log(deposites);
 
-const depositeFor = [];
-for (const mov of movements) {
-  if (mov > 0) {
-    depositeFor.push(mov);
-  }
-}
+// const depositeFor = [];
+// for (const mov of movements) {
+//   if (mov > 0) {
+//     depositeFor.push(mov);
+//   }
+// }
 
-console.log(depositeFor);
+// console.log(depositeFor);
 
-const withdrawals = movements.filter(function (mov) {
-  return mov < 0;
-});
+// const withdrawals = movements.filter(function (mov) {
+//   return mov < 0;
+// });
 
-console.log(withdrawals);
+// console.log(withdrawals);
 
 // REDUCE METHOD
-const balance = movements.reduce(function (acc, cur, i, arr) {
-  return acc + cur;
-}, 0);
+// const balance = movements.reduce(function (acc, cur, i, arr) {
+//   return acc + cur;
+// }, 0);
 
-console.log(balance);
+// console.log(balance);
 
-let balance2 = 0;
-for (const mov of movements) {
-  balance2 += mov;
-}
+// let balance2 = 0;
+// for (const mov of movements) {
+//   balance2 += mov;
+// }
 
-console.log(balance2);
+// console.log(balance2);
 
 // max value calculation
 
-const max = movements.reduce(function (acc, cur) {
-  if (acc > cur) {
-    return acc;
-  } else {
-    return cur;
-  }
-}, movements[0]);
+// const max = movements.reduce(function (acc, cur) {
+//   if (acc > cur) {
+//     return acc;
+//   } else {
+//     return cur;
+//   }
+// }, movements[0]);
 
-console.log(max);
+// console.log(max);
 
 //coding challenge
 
-const calAverageHumanAge = function (ages) {
-  const humanAges = ages.map(age => (age <= 2 ? 2 * age : 16 + age * 4));
-  const adults = humanAges.filter(age => age >= 18);
-  console.log(humanAges);
-  console.log(adults);
+// const calAverageHumanAge = function (ages) {
+//   const humanAges = ages.map(age => (age <= 2 ? 2 * age : 16 + age * 4));
+//   const adults = humanAges.filter(age => age >= 18);
+//   console.log(humanAges);
+//   console.log(adults);
 
-  const average = adults.reduce((acc, age) => acc + age, 0) / adults.length;
-  console.log(average);
-  return average;
-};
-calAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
+//   const average = adults.reduce((acc, age) => acc + age, 0) / adults.length;
+//   console.log(average);
+//   return average;
+// };
+// calAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
+
+const calAverageHumanAges = ages =>
+  ages
+    .map(age => (age <= 2 ? 2 * age : 16 + age * 4))
+    .filter(age => age >= 18)
+    .reduce((acc, age, i, arr) => acc + age / arr.length, 0);
+
+console.log(calAverageHumanAges([5, 2, 4, 1, 15, 8, 3]));
 
 // The magic of chaining method
 // we want to calculate the total deposits in USD .
 const euroToUSD = 1.1;
 
 //PIPELINE
-const totalDepositsUSD = movements
-  .filter(mov => mov > 0)
-  .map(mov => mov * euroToUSD)
-  .reduce((acc, mov) => acc + mov, 0);
+// const totalDepositsUSD = movements
+//   .filter(mov => mov > 0)
+//   .map(mov => mov * euroToUSD)
+//   .reduce((acc, mov) => acc + mov, 0);
 
-console.log(totalDepositsUSD);
+// console.log(totalDepositsUSD);
+
+// coding challenge3
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
