@@ -5,7 +5,6 @@
 // BANKIST APP
 
 // Data
-/*
 const account1 = {
   owner: 'Jonas Schmedtmann',
   movements: [200, 450, -400, 3000, -650, -130, 70, 1300],
@@ -35,7 +34,7 @@ const account4 = {
 };
 
 const accounts = [account1, account2, account3, account4];
-
+/*
 // Elements
 const labelWelcome = document.querySelector('.welcome');
 const labelDate = document.querySelector('.date');
@@ -110,7 +109,7 @@ console.log(createUserNames('Steven Thomas Williams'));
 // console.log(Name);
 
 // using FILTER METHOD
-// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 // const deposites = movements.filter(function (mov) {
 //   return mov > 0;
 // });
@@ -172,14 +171,6 @@ console.log(createUserNames('Steven Thomas Williams'));
 // };
 // calAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
 
-const calAverageHumanAges = ages =>
-  ages
-    .map(age => (age <= 2 ? 2 * age : 16 + age * 4))
-    .filter(age => age >= 18)
-    .reduce((acc, age, i, arr) => acc + age / arr.length, 0);
-
-console.log(calAverageHumanAges([5, 2, 4, 1, 15, 8, 3]));
-
 // The magic of chaining method
 // we want to calculate the total deposits in USD .
 const euroToUSD = 1.1;
@@ -193,6 +184,23 @@ const euroToUSD = 1.1;
 // console.log(totalDepositsUSD);
 
 // coding challenge3
+const calAverageHumanAges = ages =>
+  ages
+    .map(age => (age <= 2 ? 2 * age : 16 + age * 4))
+    .filter(age => age >= 18)
+    .reduce((acc, age, i, arr) => acc + age / arr.length, 0);
+
+console.log(calAverageHumanAges([5, 2, 4, 1, 15, 8, 3]));
+
+// FIND METHOD
+
+const firstWithdrawal = movements.find(mov => mov < 0);
+console.log(movements);
+console.log(firstWithdrawal);
+console.log(accounts);
+
+const account = accounts.find(acc => acc.owner === 'Jessica Davis');
+console.log(account);
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
