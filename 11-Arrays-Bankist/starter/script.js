@@ -344,3 +344,6 @@ currenciesUnique.forEach(function (value, _, map) {
 
 // const USD = movements.map(move => move * euroToUSD);
 // console.log(USD);
+
+console.log(5 + 10);
+console.log('Price');
