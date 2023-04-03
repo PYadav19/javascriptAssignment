@@ -347,3 +347,7 @@ currenciesUnique.forEach(function (value, _, map) {
 
 console.log(5 + 10);
 console.log('Price');
+
+let name = 'Dheeraj Maurya';
+name.slice(2);
+name.concat(' ');
