@@ -345,9 +345,52 @@ currenciesUnique.forEach(function (value, _, map) {
 // const USD = movements.map(move => move * euroToUSD);
 // console.log(USD);
 
-console.log(5 + 10);
-console.log('Price');
+// Sorting array
 
-let name = 'Dheeraj Maurya';
-name.slice(2);
-name.concat(' ');
+// Strings
+const owners = ['Pooja', 'Kajal', 'Tabassum', 'Ankita', 'Karry'];
+console.log(owners.sort());
+console.log(owners);
+
+// Numbers
+console.log(movements);
+
+//return < 0,A ,B (keep order)
+//return >0 ,A , B (switch order)
+
+// Ascending
+movements.sort((a, b) => {
+  if (a > b) return 1;
+  if (a < b) return -1;
+});
+
+console.log(movements);
+
+//Descending
+
+movements.sort((a, b) => {
+  if (a > b) return -1;
+  if (a < b) return 1;
+});
+
+console.log(movements);
+
+// fill method in arrays
+
+const arr = [1, 2, 3, 4, 5, 6, 7];
+console.log(new Array(1, 2, 3, 4, 5, 6, 7, 8));
+
+//Empty arrays +  fill Method
+const x = new Array(7);
+console.log(x);
+//console.log(x.map(()=>5));
+
+// x.fill(value , starting index , ending index)
+x.fill(1, 3, 6);
+x.fill(1);
+console.log(x);
+
+arr.fill(23, 2, 6);
+console.log(arr);
+
+//
