@@ -398,7 +398,7 @@ console.log(arr);
 const y = Array.from({ length: 7 }, () => 1);
 console.log(y);
 
-const z = Arrat.from({ length: 7 }, (_, i) => i + 1);
+const z = Array.from({ length: 7 }, (_, i) => i + 1);
 console.log(z);
 
 labelBalance.addEventListener('click', function () {
@@ -411,3 +411,20 @@ labelBalance.addEventListener('click', function () {
 
   const movementsUI2 = [...document.querySelectorAll('.movements_value')];
 });
+
+// Array Methods Pactice
+
+//  bankDepositeSum = accounts.map(acc => acc.movements).flat();
+const bankDepositeSum = accounts
+  .flatMap(acc => acc.movements)
+  .filter(mov => mov > 0)
+  .reduce((sum, cur) > sum + cur, 0);
+
+console.log(bankDepositeSum);
+
+//2.
+
+const numDeposites1000 = accounts
+  .flatMap(acc => acc.movements)
+  .filter(acc => acc.movements)
+  .filter(mov => mov >= 1000).length;
