@@ -285,3 +285,37 @@ console.log(Number.isFinite(23 / 0));
 
 console.log(Number.isInteger(23));
 console.log(Number.isInteger(23.0));
+
+// Squareroot and exponentiations
+console.log(Math.sqrt(25));
+console.log(25 ** (1 / 2)); // squareroot
+console.log(8 ** (1 / 3)); // cubic
+
+console.log(Math.max(5, 18, 9, 17, 10, 8, 20));
+console.log(Math.max(4, 6, 7, 10, 23, '28'));
+console.log(Math.max(4, 6, 7, 10, 23, '28px')); // it will not work as pasring is not possible in thos case
+
+console.log(Math.min(4, 6, 7, 10, 23, '28'));
+
+// Area of circle
+console.log(Math.PI * Number.parseFloat('10px') ** 2);
+
+console.log(Math.trunc(Math.random() * 6) + 1);
+
+const randomInt =
+  (min, max => Math.trunc(Math.random() * (max - min) + 1) + min);
+
+// Rounding Integers
+console.log(Math.round(23.3));
+console.log(Math.round(23.9));
+
+console.log(Math.ceil(23.3));
+console.log(Math.ceil('23.9'));
+
+console.log(Math.floor(23.3));
+console.log(Math.floor('23.9'));
+
+console.log(Math.trunc(23.3));
+
+console.log(Math.floor(-23.3));
+console.log(Math.floor(-23.3));
