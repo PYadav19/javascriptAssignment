@@ -325,3 +325,40 @@ console.log((2.7).toFixed(0));
 console.log((2.7).toFixed(3));
 console.log((2.374).toFixed(2));
 console.log((2.374).toFixed(2));
+
+// Remainder Operator
+
+console.log(5 % 2);
+console.log(5 / 2); // 5 = 2*2+1
+
+console.log(8 % 3);
+console.log(8 / 3); // 8 = 3*2+2
+
+console.log(6 % 2);
+console.log(6 / 2);
+
+console.log(7 % 2);
+console.log(7 / 2);
+
+//Example or even odd function
+
+const isEven = n => n % 2 === 0;
+
+console.log(isEven(8));
+console.log(isEven(50));
+console.log(isEven(47));
+
+// USecase to change the colour of the rows in the movements
+
+labelBalance.addEventListener('click', function () {
+  [...document.querySelectorAll.apply('.movements_row')].forEach(function (
+    row,
+    i
+  ) {
+    // 0 , 2 , 4 ,6 ,8
+    if (i % 2 === 0) row.style.backgroundColor = 'orangered';
+
+    // 0 , 3 , 6 , 9
+    if (i % 3 === 0) row.style.backgroundColor = 'blue';
+  });
+});
